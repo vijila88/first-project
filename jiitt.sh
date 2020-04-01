@@ -1,0 +1,2 @@
+VAR = "hiii"
+echo $VAR
