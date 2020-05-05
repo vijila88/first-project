@@ -1,0 +1,15 @@
+---
+
+- hosts: testserver
+  gather_facts: false
+  tasks:
+   - name: Copy file with owner and permission, using symbolic representation
+     copy:
+       src: /home/ansible/workpace/hello.sh
+       dest: /home/ansible/workspace/sample.sh
+       mode: u=rwx
+   - name: Execute the command in remote shell; stdout goes to the specified file on the remote.
+     shell: /home/ansible/workspace/sample.sh >> somelog.txt
+  roles:
+   - test1
+
